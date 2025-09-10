@@ -34,10 +34,10 @@ public class PersonService(IPersonRepository repository, IDocumentService docume
     public async Task<Person> CreateAsync(PersonCreateDto dto)
     {
         if (!documentService.ValidateCpf(dto.Cpf))
-            throw new  ValidationException("CPF format is invalid.");
+            throw new  ValidationException("CPF formato inválido");
         
         if (await repository.ExistsByCpf(dto.Cpf))
-            throw new  ValidationException("CPF already used.");
+            throw new  ValidationException("CPF já utilizado");
         
         
         var person = new Person
@@ -58,10 +58,10 @@ public class PersonService(IPersonRepository repository, IDocumentService docume
     public async Task<Person> CreateWithAddressAsync(PersonCreateWithAddressDto dto)
     {
         if (!documentService.ValidateCpf(dto.Cpf))
-            throw new  ValidationException("CPF format is invalid.");
+            throw new  ValidationException("CPF formato inválido");
         
         if (await repository.ExistsByCpf(dto.Cpf))
-            throw new  ValidationException("CPF already used.");
+            throw new  ValidationException("CPF já utilizado");
         
         var address = new Address
         {

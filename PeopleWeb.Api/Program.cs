@@ -23,7 +23,20 @@ builder.Services.AddSingleton<IDocumentService, DocumentService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173")
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowLocalhost");
 
 using (var scope = app.Services.CreateScope())
 {
@@ -49,7 +62,6 @@ app.Use(async (context, next) =>
     await next();
 });
 
-app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();

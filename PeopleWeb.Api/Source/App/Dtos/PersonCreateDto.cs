@@ -4,27 +4,27 @@ namespace PeopleWeb.Api.Source.Dtos;
 
 public class PersonCreateDto
 {
-    [Required(ErrorMessage = "{0} - Is required")]
-    [MaxLength(150, ErrorMessage = "{0} - Is too long")]
-    public string Name { get; } = string.Empty;
+    [Required(ErrorMessage = "{0} - é obrigatório")]
+    [MaxLength(150, ErrorMessage = "{0} - muito extenso")]
+    public string Name { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "{0} - Is required")]
+    [Required(ErrorMessage = "{0} - é obrigatório")]
     [MaxLength(11)]
-    public string Cpf { get; } = string.Empty;
+    public string Cpf { get; set;} = string.Empty;
 
-    [Required(ErrorMessage = "{0} - Is required")]
-    public DateTime BirthDate { get; } = new();
+    [Required(ErrorMessage = "{0} - é obrigatório")]
+    public DateTime BirthDate { get;set; } = new();
 
-    [MaxLength(10, ErrorMessage = "{0}, - Is too long")]
-    public string? Gender { get; } = null;
+    [MaxLength(10, ErrorMessage = "{0}, - muito extenso")]
+    public string? Gender { get; set;} = null;
     
-    [MaxLength(100, ErrorMessage = "{0} - Is too long")]
-    public string? BirthPlace { get; } = null;
+    [MaxLength(100, ErrorMessage = "{0} - muito extenso")]
+    public string? BirthPlace { get; set;} = null;
     
-    [MaxLength(100, ErrorMessage = "{0} - Is too long")]
-    public string? Nationality { get; } = null;
+    [MaxLength(100, ErrorMessage = "{0} - muito extenso")]
+    public string? Nationality { get; set;} = null;
 
-    [EmailAddress(ErrorMessage = "{0} - Is not a valid email address. Try put '@'.")]
-    [MaxLength(50, ErrorMessage = "{0} - Is too long")]
-    public string? Email { get; } = null;
+    [EmailAddress(ErrorMessage = "{0} - Formato de e-mail inválido")]
+    [MaxLength(50, ErrorMessage = "{0} - muito extenso")]
+    public string? Email { get; set; } = null;
 }
