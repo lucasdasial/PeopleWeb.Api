@@ -24,3 +24,7 @@
 4. Após a inicialização bem sucessdida será gerado um arquivo `sqlite` na raiz do projeto.
 5. Consuma os enpoints atraveis de um cliente Http, Swagger, ou se preferir utilize a interface dashboard disponível nesse [repositório](https://github.com/lucasdasial/PeopleWeb.App).
 6. Caso esteja rodando a interface dashboard em conjuto, certifique-se que a porta seja a mesma configurada no CORS no arquivo `Program.cs`.
+
+
+### Preview
+<img width="1422" height="725" alt="image" src="https://github.com/user-attachments/assets/f5284035-ae54-440f-9216-c47e0e746a82" />
